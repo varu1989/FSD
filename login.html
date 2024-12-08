@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border:  solid 2px black;
+            height: 200px;
+            width: 200px;
+            margin: 100px auto;
+            padding: 10px;
+            box-shadow: 0px 0px 10px palevioletred;
+            background-color: blanchedalmond;
+          }
+          h1{
+            color: black;
+            text-align: center;
+            /* margin-left: 600px; */
+            /* margin-top: 60px; */
+          }
+          body{
+            background-color: rgb(137, 223, 238);
+          }
+    </style>
+</head>
+<body>
+    <h1>Login </h1>
+    <form action="./index.html">
+        <input type="text" id="username" placeholder="username" name="username"><br>
+        <br><br>
+        <input type="password" id="password" placeholder="password" name="password">
+        <br><br>
+        <input type="submit" id="submit">
+    </form>
+
+
+    <script>
+        let submit=document.getElementById("submit");
+console.log(submit);
+submit.addEventListener("click",(event)=>{
+    //   event.preventDefault();
+      let username=document.getElementById("username");
+      localStorage.getItem("username",username.value);
+      console.log(username.value);
+      let password=document.getElementById("password");
+      localStorage.getItem("password",password.value);
+      console.log(password.value);
+      if(username.value==""){
+        event.preventDefault();
+        username.style.borderColor="red";
+        alert("please enter username");
+      }
+      else  if(password.value==""){
+        event.preventDefault();
+        password.style.borderColor="red";
+        alert("please enter password")
+      }
+      else if(username.value !=localStorage.getItem("username")){
+        event.preventDefault();
+        username.style.borderColor="red";
+        window.alert("username is wrong")
+        // alert("username is worng");
+      }
+      
+      else  if(password.value !=localStorage.getItem("password")){
+        event.preventDefault();
+        password.style.borderColor="red";
+        window.alert("password is worng")
+      }     
+      else{
+        alert("succesfull login")
+      }
+})
+    </script>
+</body>
+</html>

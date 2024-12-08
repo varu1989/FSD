@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>
+        <form action="./check.html">
+        <fieldset>
+            <legend>CONTACT DETAILS</legend>
+            <label for="name">Enter the name :</label>
+            <input type="text" name="name" id="name" placeholder="Name*" required><br><br>
+            <label for="number">Enter the number :</label>
+            <input type="tel" name="tel" id="number" placeholder="Mobile No*" required minlength="10">
+        </fieldset>
+        <fieldset>
+            <legend>ADDRESS</legend>
+            <label for="pincode">Enter the pincode :</label>
+            <input type="text" placeholder="pincode*" required minlength="6"><br><br>
+            <label for="address">Enter the address</label>
+            <input type="text" required name="address" id="address" placeholder="Address(House No,Building,street,Area)*"><br><br>
+            <label for="city">Enter the city</label>
+            <input type="text" placeholder="city/District*" required id="city"><br><br>
+            <label for="state">Enter the State</label>
+            <input type="text" placeholder="state*" required id="state">
+        </fieldset><br><br>
+        <input type="submit" value="place Order">
+        </form>
+    </div>
+</body>
+</html>

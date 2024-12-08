@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+         border:  solid 2px black;
+         height: 300px;
+         width: 400px;
+         margin: 100px auto;
+         padding: 10px;
+         font-size: 24px;
+         box-shadow: 0px 0px 10px palevioletred;
+         /* background-color: blanchedalmond; */
+       }
+    h1{
+        /* margin-left: 550px; */
+        text-align: center;
+    }
+    
+    h1{
+        color: orangered;
+        position: relative;
+        top: 50px;
+    }
+    </style>
+</head>
+<body>
+    
+        <h1>Register and login</h1>
+        <form action="./login.html">
+            <label for="">Enter Full name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="name" placeholder="Enter the name" id="fullname"><br><br>
+            <label for="">Enter the Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="email" id="username" placeholder="username" name="username"><br><br>
+            <label for="">Enter password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" id="password" placeholder="password" name="password"><br><br>
+            <label for="">Confirm password:</label>
+            <input type="password" id="password1" placeholder="password" name="password"><br><br>
+            <input type="submit" id="submit" value="Register"><br>
+            already register you can login <a href="./login.html"><br><button>Login</button></a>
+        </form>
+    
+    
+  <script>
+    let submit=document.getElementById("submit");
+console.log(submit);
+submit.addEventListener("click",(event)=>{
+    //   event.preventDefault();
+      let fullname=document.getElementById("fullname");
+      let username=document.getElementById("username");
+      localStorage.setItem("username",username.value);
+      console.log(username.value);
+      let password=document.getElementById("password");
+      let password1=document.getElementById("password1");
+      localStorage.setItem("password",password.value);
+      console.log(password.value);
+      if(fullname.value==""){
+        event.preventDefault();
+        fullname.style.borderColor="red";
+        alert("please enter name")
+      }
+      else if(username.value==""){
+        event.preventDefault();
+        username.style.borderColor="red";
+        alert("please enter email")
+      }
+       else if(password.value==""){
+        event.preventDefault();
+        password.style.borderColor="red";
+        alert("please enter password")
+      }
+      // else if(password1.value1 !=password.value && password1.value =="" ){
+      //   event.preventDefault();
+      //   password1.style.borderColor="red";
+      //   alert("please enter valid password")
+      // }
+      else if(localStorage.getItem("password")!=password1.value){
+        event.preventDefault();
+        password1.style.borderColor="red";
+        alert("enter the correct password")
+      }
+})
+  </script>
+
+</body>
+</html>
